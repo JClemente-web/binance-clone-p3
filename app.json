@@ -1,0 +1,21 @@
+{
+  "expo": {
+    "name": "binance-clone-p3",
+    "slug": "binance-clone-p3",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0B0E11"
+      }
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}
