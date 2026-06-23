@@ -2,63 +2,135 @@ import { StyleSheet } from 'react-native';
 import { colors } from '../../theme/colors';
 
 export const styles = StyleSheet.create({
-  container: {
+  screen: {
     flex: 1,
-    backgroundColor: colors.background,
+    backgroundColor: colors.loginBackground,
     alignItems: 'center',
     justifyContent: 'center',
-    paddingHorizontal: 24,
+    paddingHorizontal: 16,
   },
-  logo: {
-    width: 96,
-    height: 96,
-    marginBottom: 32,
-    borderRadius: 8,
+  card: {
+    width: '100%',
+    maxWidth: 360,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: colors.loginCardBorder,
+    paddingHorizontal: 24,
+    paddingVertical: 28,
+  },
+  logoRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 28,
+  },
+  logoIcon: {
+    width: 22,
+    height: 22,
+    marginRight: 8,
+  },
+  logoText: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: colors.primary,
+    letterSpacing: 0.5,
+  },
+  titleRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 24,
   },
   title: {
-    fontSize: 22,
-    fontWeight: '600',
-    color: colors.textPrimary,
-    marginBottom: 24,
-    alignSelf: 'flex-start',
+    fontSize: 28,
+    fontWeight: '700',
+    color: colors.loginTextPrimary,
+  },
+  qrButton: {
+    width: 36,
+    height: 36,
+    borderRadius: 8,
+    backgroundColor: colors.loginInputBackground,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  qrIcon: {
+    width: 18,
+    height: 18,
+  },
+  fieldLabel: {
+    fontSize: 13,
+    color: colors.loginTextPrimary,
+    marginBottom: 8,
   },
   input: {
     width: '100%',
     height: 48,
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: colors.border,
-    backgroundColor: colors.surface,
-    color: colors.textPrimary,
-    paddingHorizontal: 16,
-    marginBottom: 16,
+    borderColor: colors.loginInputBorder,
+    backgroundColor: colors.loginInputBackground,
+    color: colors.loginTextPrimary,
+    paddingHorizontal: 14,
+    fontSize: 14,
+    marginBottom: 20,
   },
-  button: {
+  nextButton: {
     width: '100%',
     height: 48,
-    borderRadius: 8,
+    borderRadius: 24,
     backgroundColor: colors.primary,
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 8,
   },
-  buttonText: {
-    color: colors.background,
-    fontSize: 16,
+  nextButtonText: {
+    color: colors.loginButtonText,
+    fontSize: 15,
     fontWeight: '700',
   },
-  errorText: {
-    width: '100%',
-    color: colors.negative,
+  dividerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 20,
+  },
+  dividerLine: {
+    flex: 1,
+    height: 1,
+    backgroundColor: colors.loginCardBorder,
+  },
+  dividerText: {
+    marginHorizontal: 12,
     fontSize: 13,
+    color: colors.loginTextSecondary,
+  },
+  socialButton: {
+    width: '100%',
+    height: 48,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: colors.loginInputBorder,
+    backgroundColor: colors.loginInputBackground,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: 12,
   },
-  linkButton: {
-    marginTop: 20,
+  socialIcon: {
+    width: 18,
+    height: 18,
+    marginRight: 10,
   },
-  linkText: {
-    color: colors.primary,
+  socialButtonText: {
     fontSize: 14,
-    fontWeight: '500',
+    fontWeight: '600',
+    color: colors.loginTextPrimary,
+  },
+  createAccountLink: {
+    marginTop: 16,
+    alignItems: 'center',
+  },
+  createAccountText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: colors.primary,
   },
 });

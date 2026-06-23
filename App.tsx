@@ -2,21 +2,21 @@ import React, { useState } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { View } from 'react-native';
 import LoginScreen from './src/screens/Login/LoginScreen';
-import MarketDashboardScreen from './src/screens/MarketDashboard/MarketDashboardScreen';
+import PortfolioMarginScreen from './src/screens/PortfolioMargin/PortfolioMarginScreen';
 import { styles } from './App.styles';
 
-type Screen = 'login' | 'dashboard';
+type Screen = 'login' | 'portfolioMargin';
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>('login');
 
   return (
     <View style={styles.container}>
-      <StatusBar style="light" />
+      <StatusBar style="auto" />
       {screen === 'login' ? (
-        <LoginScreen onLogin={() => setScreen('dashboard')} />
+        <LoginScreen onLogin={() => setScreen('portfolioMargin')} />
       ) : (
-        <MarketDashboardScreen />
+        <PortfolioMarginScreen />
       )}
     </View>
   );
