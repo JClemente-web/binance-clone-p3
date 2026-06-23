@@ -5,58 +5,65 @@ Trabalho individual.
 
 ## Telas clonadas
 
-| # | Tela            | Componente                                   | Referência                                  |
-|---|------------------|-----------------------------------------------|----------------------------------------------|
-| 1 | Login            | `src/screens/Login/LoginScreen.tsx`            | `assets/reference/binance-login.png`          |
-| 2 | Dashboard de mercado | `src/screens/MarketDashboard/MarketDashboardScreen.tsx` | `assets/reference/binance-dashboard.png` |
+| # | Tela              | Componente                                                        | Referência                                       |
+|---|--------------------|--------------------------------------------------------------------|---------------------------------------------------|
+| 1 | Login              | `src/screens/Login/LoginScreen.tsx`                                 | `assets/reference/binance-login.png`               |
+| 2 | Portfolio Margin   | `src/screens/PortfolioMargin/PortfolioMarginScreen.tsx`             | `assets/reference/binance-portfolio-margin.png`    |
 
-As imagens de referência (prints do app Binance original) devem ser versionadas em
-`assets/reference/`. Veja `ENTREGA.md` para o passo a passo final dessa etapa.
+As imagens de referência (prints do app Binance original) estão versionadas em
+`assets/reference/`.
 
 ## Requisitos do trabalho
 
 - [x] TypeScript (`.tsx`)
 - [x] Usar os componentes `Image`, `Text`, `TextInput` e `View`
 - [x] `StyleSheet` em arquivo separado do `.tsx` (nunca estilo inline)
-- [ ] Imagem de referência de cada clone versionada em `assets/reference/`
+- [x] Imagem de referência de cada clone versionada em `assets/reference/`
 - [x] Trabalho individual
 
 ## Estrutura
 
 ```
-P3-AppClone/
-├── App.tsx                          # Componente raiz (alterna Login <-> Dashboard)
+binance-clone-p3/
+├── App.tsx                          # Componente raiz (alterna Login <-> Portfolio Margin)
 ├── App.styles.ts
 ├── app.json                         # Configuração do Expo
 ├── package.json
 ├── tsconfig.json
 ├── assets/
-│   └── reference/                   # Prints de referência do Binance (adicionar depois)
+│   └── reference/
+│       ├── binance-login.png
+│       └── binance-portfolio-margin.png
 └── src/
     ├── theme/
-    │   └── colors.ts                 # Paleta inspirada no Binance (dark + amarelo)
+    │   └── colors.ts                 # Paleta (card claro do login + dashboard escuro)
     ├── components/
-    │   └── CryptoListItem/           # Item reutilizável da lista de criptomoedas
-    │       ├── CryptoListItem.tsx
-    │       └── CryptoListItem.styles.ts
+    │   └── AssetAllocationChart/     # Donut chart de alocação de ativos (react-native-svg)
+    │       ├── AssetAllocationChart.tsx
+    │       └── AssetAllocationChart.styles.ts
     └── screens/
         ├── Login/
         │   ├── LoginScreen.tsx
         │   └── LoginScreen.styles.ts
-        └── MarketDashboard/
-            ├── MarketDashboardScreen.tsx
-            └── MarketDashboardScreen.styles.ts
+        └── PortfolioMargin/
+            ├── PortfolioMarginScreen.tsx
+            └── PortfolioMarginScreen.styles.ts
 ```
 
 Cada tela/componente segue a convenção `Nome.tsx` + `Nome.styles.ts`
 (`StyleSheet.create`, nunca `style={{ ... }}` inline com valores estáticos).
 
-## Status atual (esqueleto)
+## Telas
 
-- Login: campos de email/senha (`TextInput`), botão de entrar, logo (`Image`, placeholder remoto por enquanto).
-- Dashboard: lista mock de criptomoedas (nome, preço, variação % verde/vermelho, mini-gráfico como `Image` placeholder).
-- Sem biblioteca de navegação ainda — `App.tsx` alterna a tela atual com `useState` (suficiente para as 2 telas do trabalho).
-- Dados e imagens são placeholders (`TODO` no código) — falta: imagens de referência reais, prints recortados, fidelidade fina de cor/espaçamento/tipografia.
+- **Login**: card claro com logo, título "Log in", ícone de QR, campo
+  "Email/Phone number" (`TextInput`), botão amarelo "Next", divisor "or",
+  botões "Continue with Google/Apple/Telegram" e link "Create a Binance Account".
+- **Portfolio Margin**: tema escuro com barra superior (logo + navegação +
+  botão Deposit), menu lateral (Dashboard, Assets > Overview/Spot/Isolated
+  Margin/Portfolio Margin/Third-Party Wallet, Orders, etc.), card de Equity,
+  métricas (UniMMR, Available Margin, Total Debt, Unrealized PNL), gráfico de
+  alocação de ativos, abas (Total/Cross Margin/USDS-M/COIN-M) e tabela com a
+  linha USDT.
 
 ## Como rodar
 
@@ -71,9 +78,9 @@ Se o `npm install` reclamar de conflito de versões (peer deps), rode:
 npx expo install --fix
 ```
 
-## Próximos passos
+Para abrir no navegador (mais fiel ao layout do Portfolio Margin, que é uma
+tela de desktop):
 
-1. Adicionar os prints de referência em `assets/reference/` (`binance-login.png`, `binance-dashboard.png`).
-2. Trocar as `Image` placeholder (logo, mini-gráficos) por assets reais.
-3. Ajustar cores/espaçamento/tipografia comparando lado a lado com a referência.
-4. (Opcional) Conectar a uma API pública de cotações no Dashboard.
+```bash
+npx expo start --web
+```
