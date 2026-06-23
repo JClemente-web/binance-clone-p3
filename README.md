@@ -10,8 +10,8 @@ Trabalho individual.
 | 1 | Login            | `src/screens/Login/LoginScreen.tsx`            | `assets/reference/binance-login.png`          |
 | 2 | Dashboard de mercado | `src/screens/MarketDashboard/MarketDashboardScreen.tsx` | `assets/reference/binance-dashboard.png` |
 
-> As imagens de referência (`.png`) ainda precisam ser adicionadas em
-> `assets/reference/` — print de tela do app Binance original.
+As imagens de referência (prints do app Binance original) devem ser versionadas em
+`assets/reference/`. Veja `ENTREGA.md` para o passo a passo final dessa etapa.
 
 ## Requisitos do trabalho
 

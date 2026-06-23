@@ -47,4 +47,18 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '700',
   },
+  errorText: {
+    width: '100%',
+    color: colors.negative,
+    fontSize: 13,
+    marginBottom: 12,
+  },
+  linkButton: {
+    marginTop: 20,
+  },
+  linkText: {
+    color: colors.primary,
+    fontSize: 14,
+    fontWeight: '500',
+  },
 });

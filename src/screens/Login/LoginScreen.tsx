@@ -13,6 +13,16 @@ const LOGO_PLACEHOLDER_URI = 'https://placehold.co/120x120/0B0E11/F0B90B?text=LO
 export default function LoginScreen({ onLogin }: Props) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  function handleSubmit() {
+    if (!email.trim() || !password.trim()) {
+      setError('Informe email e senha para continuar.');
+      return;
+    }
+    setError('');
+    onLogin?.(email.trim(), password);
+  }
 
   return (
     <View style={styles.container}>
@@ -39,11 +49,14 @@ export default function LoginScreen({ onLogin }: Props) {
         onChangeText={setPassword}
       />
 
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => onLogin?.(email, password)}
-      >
+      {error ? <Text style={styles.errorText}>{error}</Text> : null}
+
+      <TouchableOpacity style={styles.button} onPress={handleSubmit}>
         <Text style={styles.buttonText}>Entrar</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.linkButton}>
+        <Text style={styles.linkText}>Esqueceu a senha?</Text>
       </TouchableOpacity>
     </View>
   );
