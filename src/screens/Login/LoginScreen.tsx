@@ -26,7 +26,7 @@ export default function LoginScreen({ onLogin }: Props) {
         <View style={styles.titleRow}>
           <Text style={styles.title}>Log in</Text>
           <View style={styles.qrButton}>
-            <Text style={{ fontSize: 16 }}>⊞</Text>
+            <Text style={styles.qrIconGlyph}>⊞</Text>
           </View>
         </View>
 
@@ -52,19 +52,17 @@ export default function LoginScreen({ onLogin }: Props) {
         </View>
 
         <TouchableOpacity style={styles.socialButton}>
-          <Text style={[styles.socialIcon, { fontSize: 16 }]}>G</Text>
+          <Text style={styles.socialIcon}>G</Text>
           <Text style={styles.socialButtonText}>Continue with Google</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.socialButton}>
-          <Text style={[styles.socialIcon, { fontSize: 16 }]}></Text>
+          <Text style={styles.socialIcon}></Text>
           <Text style={styles.socialButtonText}>Continue with Apple</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.socialButton}>
-          <Text style={[styles.socialIcon, { fontSize: 16, color: '#2AABEE' }]}>
-            ➤
-          </Text>
+          <Text style={styles.socialIconTelegram}>➤</Text>
           <Text style={styles.socialButtonText}>Continue with Telegram</Text>
         </TouchableOpacity>
 

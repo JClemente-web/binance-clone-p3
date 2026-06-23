@@ -53,9 +53,8 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  qrIcon: {
-    width: 18,
-    height: 18,
+  qrIconGlyph: {
+    fontSize: 16,
   },
   fieldLabel: {
     fontSize: 13,
@@ -115,9 +114,13 @@ export const styles = StyleSheet.create({
     marginBottom: 12,
   },
   socialIcon: {
-    width: 18,
-    height: 18,
+    fontSize: 16,
     marginRight: 10,
+  },
+  socialIconTelegram: {
+    fontSize: 16,
+    marginRight: 10,
+    color: '#2AABEE',
   },
   socialButtonText: {
     fontSize: 14,
